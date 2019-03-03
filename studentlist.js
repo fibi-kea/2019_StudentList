@@ -55,11 +55,15 @@ async function loadJson() {
   families = await BloodData.json();
   console.log(students);
 
-  students.unshift(myPersonalObject);
-  createObjectProto();
+  addPersonalInfo();
 }
 
-function createObjectProto() {
+function addPersonalInfo() {
+  students.unshift(myPersonalObject);
+  objectPrototype();
+}
+
+function objectPrototype() {
   //Object prototype (template)
   const StudentPrototype = {
     fullName: "-student name-",
@@ -82,31 +86,10 @@ function createObjectProto() {
       );
       this.lastName = studentData.fullname.substring(lastSpace + 1);
       this.house = studentData.house;
-      this.bloodStatus = showBlood();
+      this.bloodStatus = addBloodType();
       this.id = uuidv4();
     }
   };
-
-  // Add blood type
-  function showBlood() {
-    if (families.half.includes(student.lastName)) {
-      return "Half";
-    }
-
-    if (families.pure.includes(student.lastName)) {
-      return "Pure";
-    } else {
-      return "Muggle-born";
-    }
-  }
-  // From stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
-  function uuidv4() {
-    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
-      var r = (Math.random() * 16) | 0,
-        v = c == "x" ? r : (r & 0x3) | 0x8;
-      return v.toString(16);
-    });
-  }
 
   students.forEach(studentData => {
     student = Object.create(StudentPrototype);
@@ -115,6 +98,27 @@ function createObjectProto() {
   });
   console.log(arrayOfStudents);
   filterStudents(houseFilter);
+}
+
+// Add blood type
+function addBloodType() {
+  if (families.half.includes(student.lastName)) {
+    return "Half";
+  }
+
+  if (families.pure.includes(student.lastName)) {
+    return "Pure";
+  } else {
+    return "Muggle-born";
+  }
+}
+// From stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
+function uuidv4() {
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
+    var r = (Math.random() * 16) | 0,
+      v = c == "x" ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
 }
 
 // Add filter list
@@ -323,6 +327,8 @@ function displayStudents(filteredArray) {
   studentNumber.querySelector("#count_gryffindor").textContent = gCount.length;
   studentNumber.querySelector("#count_ravenclaw").textContent = rCount.length;
   studentNumber.querySelector("#count_slytherin").textContent = sCount.length;
+  studentNumber.querySelector("#count_Squad").textContent =
+    inquisitorialSquad.length;
 }
 
 function showModal(student) {

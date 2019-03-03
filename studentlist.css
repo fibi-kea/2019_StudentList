@@ -307,3 +307,7 @@ button:last-child {
     transform: scale(1);
   }
 }
+
+.squad_01 {
+  color: greenyellow !important;
+}
