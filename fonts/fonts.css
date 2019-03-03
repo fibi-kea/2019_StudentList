@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "Parry Hotter";
+  src: url("ParryHotter.eot");
+  src: url("ParryHotter.eot?#iefix") format("embedded-opentype"),
+    url("ParryHotter.woff2") format("woff2"),
+    url("ParryHotter.woff") format("woff"),
+    url("ParryHotter.ttf") format("truetype"),
+    url("ParryHotter.svg#ParryHotter") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bilbo-hand";
+  src: url("Bilbo-handRegular.eot");
+  src: url("Bilbo-handRegular.eot?#iefix") format("embedded-opentype"),
+    url("Bilbo-handRegular.woff2") format("woff2"),
+    url("Bilbo-handRegular.woff") format("woff"),
+    url("Bilbo-handRegular.ttf") format("truetype"),
+    url("Bilbo-handRegular.svg#Bilbo-handRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bilbo-hand";
+  src: url("Bilbo-hand-Bold-Bold.eot");
+  src: url("Bilbo-hand-Bold-Bold.eot?#iefix") format("embedded-opentype"),
+    url("Bilbo-hand-Bold-Bold.woff2") format("woff2"),
+    url("Bilbo-hand-Bold-Bold.woff") format("woff"),
+    url("Bilbo-hand-Bold-Bold.ttf") format("truetype"),
+    url("Bilbo-hand-Bold-Bold.svg#Bilbo-hand-Bold-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NIGHTMARE PILLS";
+  src: url("NIGHTMAREPILLS.eot");
+  src: url("NIGHTMAREPILLS.eot?#iefix") format("embedded-opentype"),
+    url("NIGHTMAREPILLS.woff2") format("woff2"),
+    url("NIGHTMAREPILLS.woff") format("woff"),
+    url("NIGHTMAREPILLS.ttf") format("truetype"),
+    url("NIGHTMAREPILLS.svg#NIGHTMAREPILLS") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}

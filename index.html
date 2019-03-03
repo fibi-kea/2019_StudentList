@@ -1,14 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student List 2</title>
-    <link rel="stylesheet" href="studentlist.css" type="text/css">
-</head>
-<body>
-  <h1>Students 1991</h1>
-    
-  <script src="studentlist.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student List</title>
+    <link rel="stylesheet" href="studentlist.css" type="text/css" />
+    <link rel="stylesheet" href="fonts/fonts.css" />
+  </head>
+  <body>
+    <div id="cover">
+      <h1>Students 1991</h1>
+    </div>
+    <div id="wrapper">
+      <div id="sort_filter">
+        <div id="filters">
+          <img id="filter_all" src="images/filterall.png" alt="" />
+          <img id="filter_hufflepuff" src="images/hufflepuff.png" alt="" />
+          <img id="filter_gryffindor" src="images/gryffindor.png" alt="" />
+          <img id="filter_ravenclaw" src="images/ravenclaw.png" alt="" />
+          <img id="filter_slytherin" src="images/slytherin.png" alt="" />
+        </div>
+        <div id="student_count">
+          <ul>
+            <li>All students:<br /><span id="count_all"></span></li>
+            <li>Hufflepuff:<br /><span id="count_hufflepuff"></span></li>
+            <li>Gryffindor:<br /><span id="count_gryffindor"></span></li>
+            <li>Ravenclaw:<br /><span id="count_ravenclaw"></span></li>
+            <li>Slytherin:<br /><span id="count_slytherin"></span></li>
+            <li class="expelled">
+              Expelled students:<br /><span id="count_expelled"></span>
+            </li>
+          </ul>
+        </div>
+
+        <div id="sort_but">
+          <button id="sort_firstname">Sort by: Firstname</button>
+          <button id="sort_lastname">Sort by: Lastname</button>
+          <button id="sort_house">Sort by: House</button>
+        </div>
+      </div>
+
+      <section class="data-container"></section>
+
+      <template class="data-template">
+        <div class="students">
+          <img
+            src=""
+            alt=""
+            onerror="this.onerror=null;this.src='images/no_image.png';"
+          />
+          <h2>
+            <span data-field="firstname"></span><br /><span
+              data-field="lastname"
+            ></span>
+          </h2>
+          <p data-field="house"></p>
+          <button id="expel">Expel</button>
+        </div>
+      </template>
+    </div>
+
+    <div id="modal_bg"></div>
+    <div id="modal" class="">
+      <button id="close">Close</button>
+      <img
+        src=""
+        alt=""
+        data-modal="profile"
+        onerror="this.src='images/no_image.png';"
+      />
+      <div id="info">
+        <h2>
+          <span data-modal="firstname"></span><br /><span
+            data-modal="lastname"
+          ></span>
+        </h2>
+        <p data-modal="house"></p>
+        <p data-modal="blood" class="blood_type"></p>
+        <button id="join_squad">Join Inquisitorial Squad</button>
+      </div>
+    </div>
+    <script src="studentlist.js"></script>
+  </body>
 </html>
